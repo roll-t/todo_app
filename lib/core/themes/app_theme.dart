@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:todo_app/core/themes/app_colors.dart';
 
 class AppTheme {
-
   // Light Theme
   static ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
@@ -19,6 +18,19 @@ class AppTheme {
       bodyLarge: TextStyle(color: AppColors.textColor, fontSize: 16),
       bodyMedium: TextStyle(color: AppColors.textSecondaryColor, fontSize: 14),
     ),
+    inputDecorationTheme: InputDecorationTheme(
+      filled: true,
+      fillColor: Colors.transparent,
+      hintStyle: const TextStyle(
+          fontWeight: FontWeight.w300, color: Color(0xff383838)),
+      contentPadding: const EdgeInsets.all(25),
+      enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(5),
+          borderSide: const BorderSide(color: Colors.black, width: .5)),
+      border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(5),
+          borderSide: const BorderSide(color: Colors.black, width: .5)),
+    ),
     buttonTheme: const ButtonThemeData(
       buttonColor: AppColors.primaryColor, // Default button color
       disabledColor: AppColors.textButtonDisabledColor,
@@ -28,7 +40,6 @@ class AppTheme {
       color: AppColors.iconColor,
     ),
   );
-
 
   // Dark Theme
   static ThemeData darkTheme = ThemeData(
@@ -45,6 +56,19 @@ class AppTheme {
     textTheme: const TextTheme(
       bodyLarge: TextStyle(color: AppColors.textColor, fontSize: 16),
       bodyMedium: TextStyle(color: AppColors.textSecondaryColor, fontSize: 14),
+    ),
+    inputDecorationTheme: InputDecorationTheme(
+      filled: true,
+      fillColor: Colors.transparent,
+      hintStyle: const TextStyle(
+          fontWeight: FontWeight.w300, color: Color(0xff383838)),
+      contentPadding: const EdgeInsets.all(25),
+      enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(30),
+          borderSide: const BorderSide(color: Colors.black, width: .5)),
+      border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(30),
+          borderSide: const BorderSide(color: Colors.black, width: .5)),
     ),
     buttonTheme: const ButtonThemeData(
       buttonColor: AppColors.primaryColorDark,
