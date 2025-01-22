@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:todo_app/core/routes/app_routes.dart';
 import 'package:todo_app/core/routes/task_detail_screen.dart';
-import 'package:todo_app/features/home/presentation/pages/todo_list_page.dart';
 import 'package:todo_app/features/splash/presentation/bloc/splash_cubit.dart';
+import 'package:todo_app/features/splash/presentation/pages/splash_page.dart';
 import 'package:todo_app/features/theme_mode/presentation/bloc/theme_cubit.dart';
 
 class MyApp extends StatelessWidget {
@@ -21,11 +21,11 @@ class MyApp extends StatelessWidget {
         child: BlocBuilder<ThemeCubit, ThemeMode>(
             builder: (context, mode) => MaterialApp(
                   debugShowCheckedModeBanner: false,
-                  home: const TodoListPage(),
+                  home: const SplashPage(),
                   themeMode: mode,
                   theme: ThemeData.light(),
                   darkTheme: ThemeData.dark(),
-                  initialRoute: TaskDetailScreen.todoList,
+                  initialRoute: TaskDetailScreen.splash,
                   onGenerateRoute: AppRouter.generateRoute,
                 )),
       );
