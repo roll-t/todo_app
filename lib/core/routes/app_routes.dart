@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:todo_app/core/routes/task_detail_screen.dart';
-import 'package:todo_app/features/home/add_todo/presentation/page/add_todo_page.dart';
-import 'package:todo_app/features/home/todo_list/presentation/pages/todo_list_page.dart';
-import 'package:todo_app/features/splash/presentation/pages/splash_page.dart';
+import 'package:todo_app/presentation/category/pages/category_page.dart';
+import 'package:todo_app/presentation/home/pages/home_page.dart';
+import 'package:todo_app/presentation/profile/pages/profile_page.dart';
+import 'package:todo_app/presentation/settings/pages/setting_page.dart';
+import 'package:todo_app/presentation/splash/pages/splash_page.dart';
+import 'package:todo_app/presentation/todo/pages/add_todo_page.dart';
+import 'package:todo_app/presentation/todo/pages/todo_list_page.dart';
 
 class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -11,8 +15,21 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const SplashPage());
       case TaskDetailScreen.todoList:
         return MaterialPageRoute(builder: (_) => const TodoListPage());
+      case TaskDetailScreen.home:
+        return MaterialPageRoute(builder: (_) => const HomePage());
+      case TaskDetailScreen.category:
+        return MaterialPageRoute(builder: (_) => const CategoryPage());
+      case TaskDetailScreen.setting:
+        return MaterialPageRoute(builder: (_) => const SettingPage());
+      case TaskDetailScreen.profile:
+        return MaterialPageRoute(builder: (_) => const ProfilePage());
       case TaskDetailScreen.addNew:
-        return MaterialPageRoute(builder: (_) => const AddTodoPage());
+        final value = settings.arguments as AddTodoArg;
+        return MaterialPageRoute(
+          builder: (_) => AddTodoPage(
+            addTodoArg: value,
+          ),
+        );
       default:
         return _errorRoute();
     }

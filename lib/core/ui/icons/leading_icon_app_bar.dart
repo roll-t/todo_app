@@ -3,15 +3,14 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:todo_app/core/themes/app_colors.dart';
 
 class LeadingIconAppBar extends StatelessWidget {
-  const LeadingIconAppBar({
-    super.key,
-  });
+  final Color? backgroundColor;
+  const LeadingIconAppBar({super.key, this.backgroundColor});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: AppColors.whiteColor,
+          color: backgroundColor ?? AppColors.whiteColor,
           borderRadius: BorderRadius.circular(10000)),
       child: IconButton(
         icon: Icon(

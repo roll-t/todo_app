@@ -16,6 +16,5 @@ Future<void> appConfigs() async {
   );
 
   HydratedBloc.storage = storage;
-
   await initializeDependencies();
 }
